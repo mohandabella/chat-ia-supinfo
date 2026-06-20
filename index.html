@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUP.IA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <div class="chat-container">
+        <h1 id="princ">SUP.IA</h1>
+
+        <button id="reset-chat-button" class="reset-button">
+                Nouvelle conversation
+        </button>
+
+        <div id="chat-messages" class="chat-messages"></div>
+
+        <div id="loading-indicator" class="loading-indicator" style="display: none;">
+            En attente de réponse...
+        </div>
+    </div>
+
+    <div id="loader" class="loader-hidden">
+        <!-- Information: la classe 'loader-hidden' sera utilisée par JS pour masquer le loader -->
+         <div class="spinner"></div>
+         <p>L'IA est en train d'écrire...</p>
+    </div>
+    
+    <div class="utilisateur">
+        <form id="chat-form" class="chat-form">
+            <input type="text" id="user-input" placeholder="Posez votre question..." autocomplete="off">
+            <button id="bouton" type="submit">Envoyer</button>
+        </form>
+    </div>
+
+    <footer class="theme">
+        <button id="theme-toggle-button" class="footer-button">
+            Thème Sombre/Clair
+        </button>
+    </footer>
+
+    <script src="javascript/api.js" type="module"></script>
+</body>
+
+</html>

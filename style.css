@@ -1,0 +1,365 @@
+/* style.css */
+
+:root {
+    --bg-color-page: #f4f4f4;
+    --text-color-main: #333333;
+    --header-bg: #ffffff;
+    --header-text: #000000;
+    --footer-bg: #ffffff;
+    --footer-text: #000000;
+
+    --chat-container-bg: #ffffff;
+    --chat-container-border: #949494;
+    --chat-container-shadow: rgba(0, 0, 0, 0.1);
+
+    --chat-messages-bg: #ffffff;
+    --chat-messages-border: #cfcbcb;
+
+    --title-bg-color: white;
+    --title-text-color: black;
+
+    --reset-button-bg: white;
+    --reset-button-text: black;
+    --reset-button-bg-hover: rgb(167, 166, 166);
+    --reset-button-text-hover: rgb(0, 0, 0);
+
+    --user-message-bg: #CDCDCD;
+    --user-message-text: #000000;
+    --ai-message-bg: #e9e9eb;
+    --ai-message-text: #000000;
+
+    --input-bg: #ffffff;
+    --input-border: #232323;
+    --input-text: #000000;
+    --input-placeholder-text: #999999;
+
+    --button-send-bg: #9f9f9f;
+    --button-send-text: #000000;
+    --button-send-hover-bg: #454545;
+    --button-send-hover-text: rgb(0, 0, 0);
+
+    --button-footer-bg: #6c757d;
+    --button-footer-text: #ffffff;
+    --button-footer-hover-bg: #5a6268;
+
+    --loader-text-color: #000000;
+    --loader-bg-color: #ffffff;
+    --spinner-active-color: var(
+        --button-send-bg
+    ); /* Réutilise une autre variable */
+}
+
+html[data-theme="dark"] {
+    --bg-color-page: #222222;
+    --text-color-main: #000000;
+    --header-bg: #1c2128;
+    --header-text: #8f8f8f;
+    --footer-bg: #1c2128;
+    --footer-text: #768390;
+
+    --chat-container-bg: #414142;
+    --chat-container-border: #000000;
+    --chat-container-shadow: rgba(0, 0, 0, 0.3);
+
+    --chat-messages-bg: #7a7a7a;
+    --chat-messages-border: #000000;
+
+    --title-bg-color: rgb(19, 19, 19);
+    --title-text-color: rgb(199, 199, 199);
+
+    --reset-button-bg: rgb(21, 21, 21);
+    --reset-button-text: white;
+    --reset-button-bg-hover: rgb(32, 31, 31);
+    --reset-button-text-hover: rgb(255, 255, 255);
+
+
+    --user-message-bg: #808080;
+    --user-message-text: #000000;
+    --ai-message-bg: #292929;
+    --ai-message-text: #000000;
+    
+    --input-bg: #22272e;
+    --input-border: #262626;
+    --input-text: #969696;
+    --input-placeholder-text: #a0a0a0;
+
+    --button-send-bg: #8d8d8d;
+    --button-send-text: #000000;
+    --button-send-hover-bg: #000000;
+    --button-send-hover-text: #8d8d8d;
+
+    --button-footer-bg: #373e47;
+    --button-footer-text: #c9d1d9;
+    --button-footer-hover-bg: #444c56;
+
+    --loader-text-color: #161616;
+    --loader-bg-color: white;
+    --spinner-active-color: var(--button-send-bg);
+}
+
+/* N'oubliez pas votre html, *, *:before, *:after { box-sizing: inherit; } ici si ce n'est pas déjà fait */
+html {
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body  {
+    font-family: Arial, sans-serif; /* Une police lisible */
+    background-color: var(--bg-color-page); /* Un gris très clair pour le fond */
+    color: var(--text-color-main); /* Un gris foncé pour le texte principal */
+    margin: 0; /* Pas de marge par défaut sur le corps */
+    padding: 0; /* Pas de padding par défaut sur le corps */
+    line-height: 1.6; /* Améliore la lisibilité en espaçant les lignes de texte*/
+}
+
+.chat-container {
+    width: 100%; /* Prend 80% de la largeur du parent */
+    max-width: 660px; /* Mais pas plus de 700px */
+    margin: 30px auto; /* Centre horizontalement et espace verticalement */
+    background-color: var(--chat-container-bg); /* Fond blanc pour le conteneur */
+    padding: 20px; /* Espace interne de 20px */
+    border: 2px solid var(--chat-container-border); /* Bordure fine et claire */
+    box-shadow: 0 0 100px var(--chat-container-shadow); /* Une ombre légère */
+    border-radius: 90px; /* Coins légèrement arrondis */
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center; /* Centre le titre */
+    text-transform: uppercase; /* Met le texte en majuscules */
+    text-shadow: 1px 1px 0px black; /* Ajoute un contour noir au texte */
+}
+
+#chat-form {
+    color: blue;
+    text-align: center;
+    display: flex;
+    margin: 20px;
+}
+
+#user-input {
+    flex: 1; /* Prend tout l'espace disponible */
+    padding: 10px; /* Espace interne pour le champ de saisie */
+    border: 1px solid #000000; /* Bordure légère */
+    border-radius: 90px; /* Coins légèrement arrondis */
+    font-size: 16px; /* Taille de police confortable */
+    left: 285px;
+    max-width: 573px; /* Limite la largeur maximale du champ de saisie */
+    width: 100%; /* S'assure que le champ prend toute la largeur disponible */
+}
+
+#bouton {
+    background-color: var(--button-send-bg);
+    color: var(--button-send-text);
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 90px;
+    right: 280px;
+}
+
+#bouton:hover {
+    background-color: var(--button-send-hover-bg);
+    color: var(--button-send-hover-text);
+    border: 1px solid black;
+}
+
+#princ {
+    border: 1px solid black;
+    background-color: var(--title-bg-color);
+    color: var(--title-text-color);
+    border-radius: 90px;
+}
+
+.chat-message {
+    margin: 30px 0; /* Espace vertical entre les messages */
+    padding: 10px; /* Espace interne pour le message */
+    border-radius: 90px; /* Coins légèrement arrondis */
+    max-width: 700px;
+}
+
+.user-message {
+    border: 0.5px solid black;
+    background-color: var(--user-message-bg);
+    color: var(--user-message-text);
+    margin: 10px 0;
+    border-radius: 20px;
+    padding: 5px;
+    text-align: right; /* Aligne le texte à droite pour les messages de l'utilisateur */
+}
+
+.assistant-message {
+    border: 0.5px solid black;
+    background-color: var(--ai-message-bg);
+    color: var(--ai-message-text);
+    margin: 10px 0;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.utilisateur {
+    max-width: 745px;
+    margin: 0 auto;
+    border: #000000;
+    bottom: 20px;
+    justify-content: center;
+    position: sticky;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    .chat-container {
+        width: 95%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .message {
+        max-width: 85%;
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    #user-input,
+    #bouton {
+        padding: 10px 12px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 22px;
+    }
+
+    .chat-container {
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .message {
+        max-width: 90%;
+        font-size: 13px;
+        padding: 8px 12px;
+        border-radius: 15px;
+    }
+
+    #chat-form {
+        flex-direction: column;
+        padding: 8px;
+    }
+
+    #user-input {
+        margin-right: 0;
+        margin-bottom: 8px;
+        width: 100%;
+    }
+
+    #bouton {
+        width: 100%;
+    }
+}
+
+.message {
+    overflow: hidden;
+    overflow-wrap: break-word; /* Permet de couper les mots longs pour éviter le débordement */
+    word-break: break-word; /* Assure que les mots longs sont coupés correctement */
+}
+
+#bouton {
+     /* ... autres styles ... */
+     transition: background-color 0.2s ease-out, transform 0.1s ease;
+ }
+ #bouton:hover {
+     background-color: /* #votrecouleuraccenthover; */ #0056b3;
+ }
+ #bouton:active {
+     transform: scale(0.98);
+}
+
+.reset-button {
+    background-color: var(--reset-button-bg);
+    color: var(--reset-button-text);
+    border: 1px solid black;
+    border-radius: 90px;
+    width: 200px;
+    cursor: pointer;
+    align-self: center;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.reset-button:hover {
+    background-color: var(--reset-button-bg-hover);
+    color: var(--reset-button-text-hover);
+    border: 1px solid white;
+}
+
+/* Classe pour cacher le loader */
+.loader-hidden {
+    display: none !important; /* !important assure que cette règle prévaut */
+}
+
+#loader {
+    display: flex;
+    align-items: top-left;
+    justify-content: left;
+    padding: 15px 0;
+    color: var(--loader-text-color);
+    font-style: italic;
+    font-size: 14px;
+    margin-top: 10px;
+    background-color: var(--loader-bg-color);
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 200px;
+}
+
+.spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-left-color: var(--spinner-active-color, #007bff);
+    border-radius: 50%; /* Pour une forme de cercle */
+    animation: spinAnimation 0.8s linear infinite; /* Animation de rotation */
+    margin-right: 10px; /* Espace entre le spinner et le texte */
+}
+
+@keyframes spinAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+ /* Définition de l'animation d'apparition */
+@keyframes fadeInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(15px); /* Le message commence 15px plus bas */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(
+            0
+            ); /* Le message remonte à sa position normale */
+        }
+}
+
+/* Appliquer l'animation aux bulles de message */
+.message {
+    animation: fadeInFromBottom 0.4s ease-out forwards;
+}
